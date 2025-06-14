@@ -1,0 +1,308 @@
+/* --- GLOBAL STYLES --- */
+
+/* Set a nicer font for the whole website and center all text */
+body {
+  font-family: 'Roboto', Arial, sans-serif; /* Use Roboto or Arial as fallback */
+  text-align: center; /* Center all text on the page */
+  margin: 0;
+  padding: 0;
+}
+
+/* Center all text in header and its children */
+header, header * {
+  text-align: center;
+}
+
+/* --- HERO SECTION STYLES --- */
+
+/* Center all content in the hero section */
+.hero {
+  /* Add a blue gradient background */
+  background: linear-gradient(135deg, #0071c5 0%, #3399ff 100%);
+  color: #fff; /* White text for contrast */
+  padding: 40px 20px;
+  text-align: center;      /* Center all text */
+  display: flex;           /* Use Flexbox to center vertically and horizontally */
+  flex-direction: column;  /* Stack children vertically */
+  align-items: center;     /* Center horizontally */
+  justify-content: center; /* Center vertically */
+  border: 2px solid #005fa3; /* Add a blue border for styling */
+}
+
+/* Style the Intel logo */
+.hero-logo {
+  width: 100px; /* Set logo width */
+  margin-bottom: 20px; /* Space below logo */
+}
+
+/* Style the main headline */
+.hero-headline {
+  font-size: 2.5rem; /* Large text */
+  font-weight: bold;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+  text-align: center; /* Center text */
+}
+
+/* Style the subheading */
+.hero-subheading {
+  font-size: 1.2rem;
+  margin-bottom: 0;
+  opacity: 0.9; /* Slightly lighter */
+  text-align: center; /* Center text */
+}
+
+/* Make sure all text in the hero section is centered */
+.hero, .hero * {
+  text-align: center;
+  font-family: 'Roboto', Arial, sans-serif;
+}
+
+/* --- TIMELINE SECTION STYLES --- */
+
+/* Center the timeline container and its cards */
+.timeline {
+  display: flex; /* Use Flexbox for layout */
+  overflow-x: auto; /* Allow horizontal scroll on large screens */
+  gap: 20px; /* Space between milestone cards */
+  padding: 30px 10px;
+  background: #f5f7fa; /* Light background */
+  justify-content: center; /* Center cards horizontally */
+  align-items: center;     /* Center cards vertically */
+  text-align: center; /* Center text in the timeline container */
+}
+
+/* Each milestone card */
+.milestone-card {
+  background: #fff; /* White card */
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08); /* Soft shadow */
+  padding: 20px;
+  min-width: 220px; /* Minimum width for horizontal scroll */
+  max-width: 260px;
+  transition: box-shadow 0.2s, transform 0.2s;
+  font-family: Arial, sans-serif;
+  position: relative;
+  cursor: pointer;
+  display: flex;              /* Use Flexbox for card content */
+  flex-direction: column;     /* Stack content vertically */
+  align-items: center;        /* Center content horizontally */
+  text-align: center;         /* Center text inside the card */
+  border: 1.5px solid #cce4f7; /* Add a light blue border to milestone cards */
+}
+
+/* Headline inside milestone card */
+.milestone-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #0071c5; /* Intel blue */
+  margin-bottom: 8px;
+  text-align: center; /* Center text */
+}
+
+/* Date or short info */
+.milestone-date {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 10px;
+  text-align: center; /* Center text */
+}
+
+/* Hidden details, shown on hover */
+.milestone-details {
+  display: none; /* Hide by default */
+  font-size: 0.95rem;
+  color: #222;
+  margin-top: 10px;
+  text-align: center; /* Center text */
+}
+
+/* Show details when hovering over the card */
+.milestone-card:hover .milestone-details {
+  display: block;
+}
+
+/* Add a slight lift and shadow on hover */
+.milestone-card:hover {
+  box-shadow: 0 4px 16px rgba(0,113,197,0.15);
+  transform: translateY(-4px) scale(1.03);
+}
+
+/* Center all text in the timeline section and its cards */
+.timeline, .timeline * {
+  text-align: center;
+  font-family: 'Roboto', Arial, sans-serif;
+}
+
+/* Center all text in the last timeline cards section */
+section > div, section > div * {
+  text-align: center;
+  font-family: 'Roboto', Arial, sans-serif;
+}
+
+/* --- HEADER CONTENT STYLES --- */
+
+/* Style the header-content class with a blue background and white text */
+.header-content {
+  background-color: #0071c5; /* Intel blue */
+  color: #fff;               /* White text */
+  padding: 32px 16px;        /* Add some space inside */
+  border-radius: 16px;        /* Rounded corners for a softer look */
+  display: inline-block;      /* Shrink to fit content and center */
+  margin: 24px auto 32px auto;/* Center with margin */
+}
+
+/* Make sure text inside header-content stays white */
+.header-content h1,
+.header-content p {
+  color: #fff;
+}
+
+/* --- TIMELINE CARDS SECTION STYLES --- */
+
+/* Make the Timeline Cards Section (from 1968 forward) display horizontally in a scrollable flexbox */
+.timeline-cards-section {
+  display: flex;                /* Use Flexbox for horizontal layout */
+  flex-direction: row;          /* Arrange cards in a row */
+  gap: 20px;                    /* Space between cards */
+  overflow-x: auto;             /* Enable horizontal scrolling */
+  padding: 30px 10px;           /* Add some padding */
+  justify-content: flex-start;  /* Align cards to the left */
+  align-items: stretch;         /* Stretch cards to same height */
+  scroll-behavior: smooth;      /* Smooth scrolling */
+  margin-bottom: 32px;          /* Space below the section */
+}
+
+/* Style each card inside the timeline-cards-section */
+.timeline-cards-section > div {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  padding: 20px;
+  min-width: 220px;
+  max-width: 260px;
+  flex: 0 0 auto;               /* Prevent cards from shrinking */
+  text-align: center;
+  font-family: 'Roboto', Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1.5px solid #cce4f7; /* Add a light blue border to timeline cards */
+}
+
+/* Style for the timeline instructions */
+.timeline-instructions {
+  /* Center the text */
+  text-align: center;
+  /* Make the text larger */
+  font-size: 1.3em;
+  /* Add space above and below */
+  margin: 24px 0;
+  /* Use a friendly blue color */
+  color: #1a4e8a;
+  /* Light blue background */
+  background-color: #eaf3fb;
+  /* Rounded corners */
+  border-radius: 12px;
+  /* Padding inside the box */
+  padding: 16px 10px;
+  /* Make the text bold */
+  font-weight: bold;
+  /* Add a blue border */
+  border: 2px solid #b3d1f7;
+  /* Add a soft shadow */
+  box-shadow: 0 2px 8px rgba(42, 110, 187, 0.10);
+  /* Smooth transition for hover effect */
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+/* Add a hover effect for extra style */
+.timeline-instructions:hover {
+  /* Slightly darker background on hover */
+  background-color: #d0e7fa;
+  /* Change text color on hover */
+  color: #17406a;
+  /* Make the shadow a bit stronger */
+  box-shadow: 0 4px 16px rgba(42, 110, 187, 0.18);
+  /* Slightly scale up the box */
+  transform: scale(1.03);
+}
+
+/* Hide only the paragraph inside each timeline card by default */
+.timeline-card-text p {
+  display: none; /* Hide the paragraph text */
+}
+
+/* Show the paragraph text only when hovering over the card */
+.timeline-cards-section > div:hover .timeline-card-text p {
+  display: block; /* Show the paragraph on hover */
+}
+
+/* Make images inside cards look nice */
+.timeline-cards-section img {
+  width: 100%;
+  max-width: 200px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+
+/* Responsive: Stack cards vertically on small screens */
+@media (max-width: 700px) {
+  .timeline-cards-section {
+    flex-direction: column;   /* Stack cards vertically */
+    gap: 16px;                /* Less space between cards */
+    align-items: center;      /* Center cards horizontally */
+    overflow-x: visible;      /* Remove horizontal scroll */
+  }
+  .timeline-cards-section > div {
+    width: 90%;               /* Make cards fill most of the width */
+    max-width: 400px;
+    min-width: 0;
+  }
+}
+
+/* --- RESPONSIVE DESIGN --- */
+
+/* On small screens, stack timeline vertically */
+@media (max-width: 700px) {
+  .timeline {
+    flex-direction: column; /* Stack cards vertically */
+    overflow-x: visible; /* No horizontal scroll */
+    gap: 16px;
+    align-items: center; /* Center cards vertically */
+    justify-content: center; /* Center cards horizontally */
+    text-align: center; /* Center text on small screens */
+  }
+  .milestone-card {
+    min-width: 0;
+    width: 90%; /* Make cards fill most of the width */
+    max-width: 400px;
+    align-items: center; /* Center content horizontally */
+    text-align: center;  /* Center text */
+  }
+}
+
+/* --- DIVIDER STYLES --- */
+
+/* Add a simple horizontal divider style for sections */
+.divider {
+  width: 80%;
+  max-width: 400px;
+  height: 2px;
+  background: #cce4f7; /* Light blue color */
+  margin: 32px auto 24px auto; /* Space above and below */
+  border: none;
+  border-radius: 2px;
+}
+
+/* Optional: Add a smaller divider for inside cards */
+.card-divider {
+  width: 60%;
+  height: 1.5px;
+  background: #e0eaf3;
+  margin: 12px auto;
+  border: none;
+  border-radius: 1px;
+}
+
+/* --- END OF STYLES --- */
