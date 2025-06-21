@@ -7,8 +7,126 @@
   <link rel="stylesheet" href="styles.css">
   <!-- Add a Google Fonts link for a nicer font (e.g., 'Roboto') -->
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+
+  <!-- Add Bootstrap CSS in your <head> if not already included -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+
+  <script>
+    // This script sets the language to Arabic by default
+    const translations = {
+      en: {
+        'label-language': 'Choose Language:',
+        'main-title': 'Sustainability Through the Ages',
+        'main-desc': "Explore Intel's journey through time, discovering how our commitment to innovation has shaped a more sustainable future for technology and our planet.",
+        'hero-headline': 'Intel Sustainability Timeline',
+        'hero-subheading': "Discover how Intel is making a difference for our planet, year by year.",
+        'timeline-instructions': 'Scroll to view timeline | Hover over cards to learn more!',
+        // Timeline Cards Section
+        'card1-title': 'Intel Founded',
+        'card1-desc': 'Robert Noyce and Gordon Moore rename the newly formed company NM Electronics to Intel Corporation, laying the foundation for decades of technological innovation.',
+        'card2-title': 'First Microprocessor',
+        'card2-desc': "Intel debuts the 4004, the world's first commercial microprocessor, igniting the microprocessor revolution and propelling the future of computing devices.",
+        'card3-title': '8086 Processor',
+        'card3-desc': 'Launch of the 8086 processor, establishing the x86 architecture that drives countless PCs and servers in the modern era.',
+        'card4-title': '386 Processor',
+        'card4-desc': 'Intel introduces the 386 processor with 32-bit architecture, ushering in a new era of performance and multitasking for personal computers.',
+        'card5-title': 'Peak GHG Emissions',
+        'card5-desc': "This year marks Intel's highest annual greenhouse gas emissions for operations. Over subsequent years, Intel invests heavily in chemical abatement, renewable energy, and energy-efficient manufacturing to reverse this trend.",
+        'card6-title': 'RISE Strategy',
+        'card6-desc': "Intel launches its RISE (Responsible, Inclusive, Sustainable, Enabling) strategy and 2030 goals, aiming to drive industry-wide progress on climate action, water stewardship, and waste reduction.",
+        'card7-title': 'Net-Zero By 2040',
+        'card7-desc': "Intel announces its commitment to achieve net-zero greenhouse gas emissions (Scope 1 and 2) across its global operations by 2040, building on years of environmental initiatives.",
+        'card8-title': 'Renewable Electricity',
+        'card8-desc': "The company achieves 99% renewable electricity usage worldwide, helping to drastically lower carbon emissions and driving progress toward Intel's long-term sustainability goals.",
+        'card9-title': 'Sustainability Summit',
+        'card9-desc': "Intel hosts its first Sustainability Summit, uniting suppliers, government officials, and industry leaders to collaborate on next-generation sustainable semiconductor manufacturing.",
+        // Timeline Milestones
+        'milestone1-title': 'First Green Initiative',
+        'milestone1-details': 'Intel launched its first company-wide sustainability program, focusing on energy efficiency.',
+        'milestone2-title': 'Renewable Energy Commitment',
+        'milestone2-details': 'Intel committed to using 100% renewable energy in all U.S. operations.',
+        'milestone3-title': 'Water Restoration Project',
+        'milestone3-details': 'Intel began restoring more water than it consumed in its manufacturing processes.',
+        'milestone4-title': 'Zero Waste to Landfill',
+        'milestone4-details': 'Achieved zero waste to landfill at major manufacturing sites worldwide.',
+        // Newsletter Subscription Form
+        'newsletter-heading': "Sign Up for Intel's Sustainability Newsletter",
+        'newsletter-desc': "Stay updated on Intel's latest sustainability initiatives and news. Enter your email below to subscribe!",
+        'newsletter-label': "Email address",
+        'newsletter-button': "Subscribe",
+        'footer-text': '© 2024 Intel Corporation. All rights reserved. (Not really)',
+        // Sustainability Efforts Section
+        'sustainability1-title': 'Green Manufacturing',
+        'sustainability1-desc': 'Intel uses energy-efficient processes and renewable energy to reduce its environmental impact during chip manufacturing.',
+        'sustainability2-title': 'Water Conservation',
+        'sustainability2-desc': 'Intel works to restore more water than it consumes, helping protect water resources for communities and the environment.',
+        'sustainability3-title': 'Waste Reduction',
+        'sustainability3-desc': 'Intel aims for zero waste to landfill at major sites, recycling and reusing materials to minimize waste.'
+      },
+      ar: {
+        'label-language': 'اختر اللغة:',
+        'main-title': 'الاستدامة عبر العصور',
+        'main-desc': 'استكشف رحلة إنتل عبر الزمن، واكتشف كيف ساهم التزامنا بالابتكار في تشكيل مستقبل أكثر استدامة للتكنولوجيا وكوكبنا.',
+        'hero-headline': 'الجدول الزمني لاستدامة إنتل',
+        'hero-subheading': 'اكتشف كيف تُحدث إنتل فرقًا لكوكبنا عامًا بعد عام.',
+        'timeline-instructions': 'مرر لعرض الجدول الزمني | مرر فوق البطاقات لمعرفة المزيد!',
+        // Timeline Cards Section
+        'card1-title': 'تأسيس إنتل',
+        'card1-desc': 'قام روبرت نويس وجوردون مور بإعادة تسمية الشركة الجديدة من NM Electronics إلى إنتل، مما وضع الأساس لعقود من الابتكار التكنولوجي.',
+        'card2-title': 'أول معالج دقيق',
+        'card2-desc': 'تطلق إنتل 4004، أول معالج دقيق تجاري في العالم، مما أشعل ثورة المعالجات الدقيقة ودفع مستقبل أجهزة الحوسبة.',
+        'card3-title': 'معالج 8086',
+        'card3-desc': 'إطلاق معالج 8086، الذي أسس بنية x86 التي تشغل العديد من أجهزة الكمبيوتر والخوادم الحديثة.',
+        'card4-title': 'معالج 386',
+        'card4-desc': 'تقدم إنتل معالج 386 بهندسة 32 بت، مما يمهد لعصر جديد من الأداء وتعدد المهام لأجهزة الكمبيوتر الشخصية.',
+        'card5-title': 'ذروة انبعاثات الغازات الدفيئة',
+        'card5-desc': 'يمثل هذا العام أعلى انبعاثات سنوية للغازات الدفيئة لعمليات إنتل. في السنوات التالية، استثمرت إنتل بكثافة في معالجة المواد الكيميائية والطاقة المتجددة والتصنيع الموفّر للطاقة لعكس هذا الاتجاه.',
+        'card6-title': 'استراتيجية RISE',
+        'card6-desc': 'تطلق إنتل استراتيجية RISE (المسؤولة، الشاملة، المستدامة، التمكينية) وأهداف 2030، بهدف دفع التقدم الصناعي في العمل المناخي، وإدارة المياه، وتقليل النفايات.',
+        'card7-title': 'صفر انبعاثات بحلول 2040',
+        'card7-desc': 'تعلن إنتل التزامها بتحقيق صافي انبعاثات صفرية (النطاق 1 و2) في عملياتها العالمية بحلول عام 2040، استنادًا إلى سنوات من المبادرات البيئية.',
+        'card8-title': 'الكهرباء المتجددة',
+        'card8-desc': 'تصل الشركة إلى استخدام 99% من الكهرباء المتجددة عالميًا، مما يساعد على خفض الانبعاثات الكربونية بشكل كبير ودفع التقدم نحو أهداف الاستدامة طويلة الأجل لإنتل.',
+        'card9-title': 'قمة الاستدامة',
+        'card9-desc': 'تستضيف إنتل أول قمة استدامة لها، وتجمع الموردين والمسؤولين الحكوميين وقادة الصناعة للتعاون في تصنيع أشباه الموصلات المستدامة من الجيل القادم.',
+        // Timeline Milestones
+        'milestone1-title': 'أول مبادرة خضراء',
+        'milestone1-details': 'أطلقت إنتل أول برنامج استدامة على مستوى الشركة، مع التركيز على كفاءة الطاقة.',
+        'milestone2-title': 'الالتزام بالطاقة المتجددة',
+        'milestone2-details': 'التزمت إنتل باستخدام 100% من الطاقة المتجددة في جميع عملياتها في الولايات المتحدة.',
+        'milestone3-title': 'مشروع استعادة المياه',
+        'milestone3-details': 'بدأت إنتل في استعادة مياه أكثر مما تستهلكه في عمليات التصنيع.',
+        'milestone4-title': 'صفر نفايات إلى مكب النفايات',
+        'milestone4-details': 'حققت إنتل صفر نفايات إلى مكب النفايات في مواقع التصنيع الرئيسية حول العالم.',
+        // Newsletter Subscription Form
+        'newsletter-heading': 'اشترك في نشرة إنتل للاستدامة',
+        'newsletter-desc': 'ابقَ على اطلاع بآخر مبادرات وأخبار الاستدامة من إنتل. أدخل بريدك الإلكتروني أدناه للاشتراك!',
+        'newsletter-label': 'البريد الإلكتروني',
+        'newsletter-button': 'اشترك',
+        'footer-text': '© 2024 شركة إنتل. جميع الحقوق محفوظة. (ليس فعليًا)',
+        // Sustainability Efforts Section
+        'sustainability1-title': 'التصنيع الأخضر',
+        'sustainability1-desc': 'تستخدم إنتل عمليات موفرة للطاقة وطاقة متجددة لتقليل الأثر البيئي أثناء تصنيع الرقائق.',
+        'sustainability2-title': 'الحفاظ على المياه',
+        'sustainability2-desc': 'تعمل إنتل على استعادة مياه أكثر مما تستهلكه، مما يساعد في حماية الموارد المائية للمجتمعات والبيئة.',
+        'sustainability3-title': 'تقليل النفايات',
+        'sustainability3-desc': 'تهدف إنتل إلى تحقيق صفر نفايات إلى مكب النفايات في المواقع الرئيسية، من خلال إعادة التدوير وإعادة الاستخدام لتقليل النفايات.'
+      }
+    };
+
+    function setLanguage(lang) {
+      document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+      for (const id in translations[lang]) {
+        const el = document.getElementById(id);
+        if (el) el.textContent = translations[lang][id];
+      }
+    }
+
+    // Always set language to Arabic on page load
+    setLanguage('ar');
+  </script>
 
   <!-- Header / Hero Section -->
   <header>
@@ -16,193 +134,206 @@
       <!-- Ask Copilot to teach you about `.svg` 🙂 -->
       <img src="img/intel-header-logo.svg" alt="Intel Logo" width="120"/>
       <!-- Main Heading -->
-      <h1>
-        Sustainability Through the Ages
-      </h1>
-
+      <h1 id="main-title">الاستدامة عبر العصور</h1>
       <!-- Subheading / Description -->
-      <p>
-        Explore Intel's journey through time, discovering how our commitment
-        to innovation has shaped a more sustainable future for technology 
-        and our planet.
-      </p>
+      <p id="main-desc">استكشف رحلة إنتل عبر الزمن، واكتشف كيف ساهم التزامنا بالابتكار في تشكيل مستقبل أكثر استدامة للتكنولوجيا وكوكبنا.</p>
     </div>
   </header>
 
   <!-- HERO SECTION -->
-  <section class="hero">
-    <!-- Main headline -->
-    <h1 class="hero-headline">Intel Sustainability Timeline</h1>
-    <!-- Add a small horizontal divider for a polished look -->
-    <hr class="divider">
-    <p class="hero-subheading">Discover how Intel is making a difference for our planet, year by year.</p>
-  </section>
+  <div class="container mt-5 mb-5">
+    <div class="row justify-content-center">
+      <div class="col-md-10 py-4">
+        <section class="hero text-center">
+          <!-- Main headline -->
+          <h1 class="hero-headline" id="hero-headline">الجدول الزمني لاستدامة إنتل</h1>
+          <!-- Add a small horizontal divider for a polished look -->
+          <hr class="divider">
+          <p class="hero-subheading" id="hero-subheading">اكتشف كيف تُحدث إنتل فرقًا لكوكبنا عامًا بعد عام.</p>
+        </section>
+      </div>
+    </div>
+  </div>
 
-  <!-- Timeline Cards Section -->
-  <section class="timeline-cards-section">
-    <!-- Card 1: 1968 -->
-    <div>
-      <img src="img/1.jpg" alt="Intel's first microprocessor chip released in 1971">
-      <!-- Wrap the text in a div for hover effect -->
-      <div class="timeline-card-text">
-        <h2>1968</h2>
-        <h3>Intel Founded</h3>
-        <p>
-          Robert Noyce and Gordon Moore rename the newly formed company 
-          NM Electronics to Intel Corporation, laying the foundation for 
-          decades of technological innovation.
-        </p>
+  <!-- Timeline and Milestones in a Single Column Layout -->
+  <div class="container mb-5">
+    <div class="row gy-5">
+      <div class="col-md-10 mx-auto mb-4 px-3">
+        <!-- Timeline Cards Section -->
+        <section class="timeline-cards-section mb-5">
+          <!-- Card 1: 1968 -->
+          <div>
+            <img src="img/1.jpg" alt="Intel's first microprocessor chip released in 1971">
+            <!-- Wrap the text in a div for hover effect -->
+            <div class="timeline-card-text">
+              <h2>1968</h2>
+              <h3 id="card1-title">تأسيس إنتل</h3>
+              <p id="card1-desc">قام روبرت نويس وجوردون مور بإعادة تسمية الشركة الجديدة من NM Electronics إلى إنتل، مما وضع الأساس لعقود من الابتكار التكنولوجي.</p>
+            </div>
+          </div>
+          <!-- Card 2: 1971 -->
+          <div>
+            <img src="img/2.jpg" alt="Intel's first microprocessor chip released in 1971">
+            <div class="timeline-card-text">
+              <h2>1971</h2>
+              <h3 id="card2-title">أول معالج دقيق</h3>
+              <p id="card2-desc">تطلق إنتل 4004، أول معالج دقيق تجاري في العالم، مما أشعل ثورة المعالجات الدقيقة ودفع مستقبل أجهزة الحوسبة.</p>
+            </div>
+          </div>
+          <!-- Card 3: 1978 -->
+          <div>
+            <img src="img/3.jpg" alt="Launch of the 8086 processor in 1978">
+            <div class="timeline-card-text">
+              <h2>1978</h2>
+              <h3 id="card3-title">معالج 8086</h3>
+              <p id="card3-desc">إطلاق معالج 8086، الذي أسس بنية x86 التي تشغل العديد من أجهزة الكمبيوتر والخوادم الحديثة.</p>
+            </div>
+          </div>
+          <!-- Card 4: 1985 -->
+          <div>
+            <img src="img/4.jpg" alt="Introduction of the 386 processor in 1985">
+            <div class="timeline-card-text">
+              <h2>1985</h2>
+              <h3 id="card4-title">معالج 386</h3>
+              <p id="card4-desc">تقدم إنتل معالج 386 بهندسة 32 بت، مما يمهد لعصر جديد من الأداء وتعدد المهام لأجهزة الكمبيوتر الشخصية.</p>
+            </div>
+          </div>
+          <!-- Card 5: 2006 -->
+          <div>
+            <img src="img/5.png" alt="Intel's peak greenhouse gas emissions year in 2006">
+            <div class="timeline-card-text">
+              <h2>2006</h2>
+              <h3 id="card5-title">ذروة انبعاثات الغازات الدفيئة</h3>
+              <p id="card5-desc">يمثل هذا العام أعلى انبعاثات سنوية للغازات الدفيئة لعمليات إنتل. في السنوات التالية، استثمرت إنتل بكثافة في معالجة المواد الكيميائية والطاقة المتجددة والتصنيع الموفّر للطاقة لعكس هذا الاتجاه.</p>
+            </div>
+          </div>
+          <!-- Card 6: 2020 -->
+          <div>
+            <img src="img/6.png" alt="Launch of Intel's RISE strategy in 2020">
+            <div class="timeline-card-text">
+              <h2>2020</h2>
+              <h3 id="card6-title">استراتيجية RISE</h3>
+              <p id="card6-desc">تطلق إنتل استراتيجية RISE (المسؤولة، الشاملة، المستدامة، التمكينية) وأهداف 2030، بهدف دفع التقدم الصناعي في العمل المناخي، وإدارة المياه، وتقليل النفايات.</p>
+            </div>
+          </div>
+          <!-- Card 7: 2022 -->
+          <div>
+            <img src="img/7.png" alt="Intel's net-zero commitment announcement in 2022">
+            <div class="timeline-card-text">
+              <h2>2022</h2>
+              <h3 id="card7-title">صفر انبعاثات بحلول 2040</h3>
+              <p id="card7-desc">تعلن إنتل التزامها بتحقيق صافي انبعاثات صفرية (النطاق 1 و2) في عملياتها العالمية بحلول عام 2040، استنادًا إلى سنوات من المبادرات البيئية.</p>
+            </div>
+          </div>
+          <!-- Card 8: 2023 -->
+          <div>
+            <img src="img/8.jpg" alt="Intel achieves 99% renewable electricity usage in 2023">
+            <div class="timeline-card-text">
+              <h2>2023</h2>
+              <h3 id="card8-title">الكهرباء المتجددة</h3>
+              <p id="card8-desc">تصل الشركة إلى استخدام 99% من الكهرباء المتجددة عالميًا، مما يساعد على خفض الانبعاثات الكربونية بشكل كبير ودفع التقدم نحو أهداف الاستدامة طويلة الأجل لإنتل.</p>
+            </div>
+          </div>
+          <!-- Card 9: 2024 -->
+          <div>
+            <img src="img/9.jpg" alt="Intel's first Sustainability Summit in 2024">
+            <div class="timeline-card-text">
+              <h2>2024</h2>
+              <h3 id="card9-title">قمة الاستدامة</h3>
+              <p id="card9-desc">تستضيف إنتل أول قمة استدامة لها، وتجمع الموردين والمسؤولين الحكوميين وقادة الصناعة للتعاون في تصنيع أشباه الموصلات المستدامة من الجيل القادم.</p>
+            </div>
+          </div>
+        </section>
+        <!-- Timeline Milestones Section -->
+        <section class="timeline">
+          <!-- TIMELINE SECTION -->
+          <!-- Each milestone card -->
+          <div class="milestone-card">
+            <div class="milestone-title" id="milestone1-title">أول مبادرة خضراء</div>
+            <div class="milestone-date">2010</div>
+            <!-- Details are hidden until hover -->
+            <div class="milestone-details" id="milestone1-details">أطلقت إنتل أول برنامج استدامة على مستوى الشركة، مع التركيز على كفاءة الطاقة.</div>
+          </div>
+          <div class="milestone-card">
+            <div class="milestone-title" id="milestone2-title">الالتزام بالطاقة المتجددة</div>
+            <div class="milestone-date">2015</div>
+            <div class="milestone-details" id="milestone2-details">التزمت إنتل باستخدام 100% من الطاقة المتجددة في جميع عملياتها في الولايات المتحدة.</div>
+          </div>
+          <div class="milestone-card">
+            <div class="milestone-title" id="milestone3-title">مشروع استعادة المياه</div>
+            <div class="milestone-date">2018</div>
+            <div class="milestone-details" id="milestone3-details">بدأت إنتل في استعادة مياه أكثر مما تستهلكه في عمليات التصنيع.</div>
+          </div>
+          <div class="milestone-card">
+            <div class="milestone-title" id="milestone4-title">صفر نفايات إلى مكب النفايات</div>
+            <div class="milestone-date">2022</div>
+            <div class="milestone-details" id="milestone4-details">حققت إنتل صفر نفايات إلى مكب النفايات في مواقع التصنيع الرئيسية حول العالم.</div>
+          </div>
+          <!-- Add more milestone cards as needed -->
+        </section>
       </div>
     </div>
+    <!-- Timeline instructions below the main content -->
+    <div class="row mt-4">
+      <div class="col-12">
+        <p class="timeline-instructions text-center mt-3" id="timeline-instructions">مرر لعرض الجدول الزمني | مرر فوق البطاقات لمعرفة المزيد!</p>
+      </div>
+    </div>
+  </div>
 
-    <!-- Card 2: 1971 -->
-    <div>
-      <img src="img/2.jpg" alt="Intel's first microprocessor chip released in 1971">
-      <div class="timeline-card-text">
-        <h2>1971</h2>
-        <h3>First Microprocessor</h3>
-        <p>
-          Intel debuts the 4004, the world's first commercial microprocessor, 
-          igniting the microprocessor revolution and propelling the future 
-          of computing devices.
-        </p>
+  <!-- Intel Sustainability Efforts Section (Three Columns) -->
+  <div class="container mb-5">
+    <div class="row text-center">
+      <!-- Column 1 -->
+      <div class="col-md-4 mb-4">
+        <h3 id="sustainability1-title">التصنيع الأخضر</h3>
+        <p id="sustainability1-desc">تستخدم إنتل عمليات موفرة للطاقة وطاقة متجددة لتقليل الأثر البيئي أثناء تصنيع الرقائق.</p>
+        <!-- Learn More button -->
+        <button class="btn btn-info mt-2">اعرف المزيد</button>
+      </div>
+      <!-- Column 2 -->
+      <div class="col-md-4 mb-4">
+        <h3 id="sustainability2-title">الحفاظ على المياه</h3>
+        <p id="sustainability2-desc">تعمل إنتل على استعادة مياه أكثر مما تستهلكه، مما يساعد في حماية الموارد المائية للمجتمعات والبيئة.</p>
+        <!-- Learn More button -->
+        <button class="btn btn-info mt-2">اعرف المزيد</button>
+      </div>
+      <!-- Column 3 -->
+      <div class="col-md-4 mb-4">
+        <h3 id="sustainability3-title">تقليل النفايات</h3>
+        <p id="sustainability3-desc">تهدف إنتل إلى تحقيق صفر نفايات إلى مكب النفايات في المواقع الرئيسية، من خلال إعادة التدوير وإعادة الاستخدام لتقليل النفايات.</p>
+        <!-- Learn More button -->
+        <button class="btn btn-info mt-2">اعرف المزيد</button>
       </div>
     </div>
+  </div>
+  <!-- End of Intel Sustainability Efforts Section -->
 
-    <!-- Card 3: 1978 -->
-    <div>
-      <img src="img/3.jpg" alt="Launch of the 8086 processor in 1978">
-      <div class="timeline-card-text">
-        <h2>1978</h2>
-        <h3>8086 Processor</h3>
-        <p>
-          Launch of the 8086 processor, establishing the x86 architecture 
-          that drives countless PCs and servers in the modern era.
-        </p>
+  <!-- Newsletter Section (Bootstrap) -->
+  <div class="container mb-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="newsletter-box p-4 bg-light rounded shadow-sm">
+          <h2 class="mb-3" id="newsletter-heading">اشترك في نشرة إنتل للاستدامة</h2>
+          <p class="mb-4" id="newsletter-desc">ابقَ على اطلاع بآخر مبادرات وأخبار الاستدامة من إنتل. أدخل بريدك الإلكتروني أدناه للاشتراك!</p>
+          <form>
+            <div class="mb-3">
+              <label for="newsletterEmail" class="form-label" id="newsletter-label">البريد الإلكتروني</label>
+              <input type="email" class="form-control" id="newsletterEmail" placeholder="name@example.com" required>
+            </div>
+            <button type="submit" class="btn btn-primary" id="newsletter-button">اشترك</button>
+          </form>
+        </div>
       </div>
     </div>
+  </div>
+  <!-- End of Newsletter Section -->
 
-    <!-- Card 4: 1985 -->
-    <div>
-      <img src="img/4.jpg" alt="Introduction of the 386 processor in 1985">
-      <div class="timeline-card-text">
-        <h2>1985</h2>
-        <h3>386 Processor</h3>
-        <p>
-          Intel introduces the 386 processor with 32-bit architecture, 
-          ushering in a new era of performance and multitasking for 
-          personal computers.
-        </p>
-      </div>
-    </div>
+  <!-- Footer Section (Bootstrap) -->
+  <footer class="bg-light text-center py-4 mt-5">
+    <small id="footer-text">© 2024 شركة إنتل. جميع الحقوق محفوظة. (ليس فعليًا)</small>
+  </footer>
+  <!-- End of Footer Section -->
 
-    <!-- Card 5: 2006 -->
-    <div>
-      <img src="img/5.png" alt="Intel's peak greenhouse gas emissions year in 2006">
-      <div class="timeline-card-text">
-        <h2>2006</h2>
-        <h3>Peak GHG Emissions</h3>
-        <p>
-          This year marks Intel's highest annual greenhouse gas emissions 
-          for operations. Over subsequent years, Intel invests heavily in 
-          chemical abatement, renewable energy, and energy-efficient 
-          manufacturing to reverse this trend.
-        </p>
-      </div>
-    </div>
-
-    <!-- Card 6: 2020 -->
-    <div>
-      <img src="img/6.png" alt="Launch of Intel's RISE strategy in 2020">
-      <div class="timeline-card-text">
-        <h2>2020</h2>
-        <h3>RISE Strategy</h3>
-        <p>
-          Intel launches its RISE (Responsible, Inclusive, Sustainable, 
-          Enabling) strategy and 2030 goals, aiming to drive industry-wide 
-          progress on climate action, water stewardship, and waste reduction.
-        </p>
-      </div>
-    </div>
-
-    <!-- Card 7: 2022 -->
-    <div>
-      <img src="img/7.png" alt="Intel's net-zero commitment announcement in 2022">
-      <div class="timeline-card-text">
-        <h2>2022</h2>
-        <h3>Net-Zero By 2040</h3>
-        <p>
-          Intel announces its commitment to achieve net-zero greenhouse 
-          gas emissions (Scope 1 and 2) across its global operations 
-          by 2040, building on years of environmental initiatives.
-        </p>
-      </div>
-    </div>
-
-    <!-- Card 8: 2023 -->
-    <div>
-      <img src="img/8.jpg" alt="Intel achieves 99% renewable electricity usage in 2023">
-      <div class="timeline-card-text">
-        <h2>2023</h2>
-        <h3>Renewable Electricity</h3>
-        <p>
-          The company achieves 99% renewable electricity usage worldwide, 
-          helping to drastically lower carbon emissions and driving progress 
-          toward Intel's long-term sustainability goals.
-        </p>
-      </div>
-    </div>
-
-    <!-- Card 9: 2024 -->
-    <div>
-      <img src="img/9.jpg" alt="Intel's first Sustainability Summit in 2024">
-      <div class="timeline-card-text">
-        <h2>2024</h2>
-        <h3>Sustainability Summit</h3>
-        <p>
-          Intel hosts its first Sustainability Summit, uniting suppliers, 
-          government officials, and industry leaders to collaborate on 
-          next-generation sustainable semiconductor manufacturing.
-        </p>
-      </div>
-    </div>
-  </section>
-  <!-- Add a class to the paragraph for styling -->
-  <p class="timeline-instructions">Scroll to view timeline | Hover over cards to learn more!</p>
-
-    <!-- TIMELINE SECTION -->
-  <section class="timeline">
-    <!-- Each milestone card -->
-    <div class="milestone-card">
-      <div class="milestone-title">First Green Initiative</div>
-      <div class="milestone-date">2010</div>
-      <!-- Details are hidden until hover -->
-      <div class="milestone-details">
-        Intel launched its first company-wide sustainability program, focusing on energy efficiency.
-      </div>
-    </div>
-    <div class="milestone-card">
-      <div class="milestone-title">Renewable Energy Commitment</div>
-      <div class="milestone-date">2015</div>
-      <div class="milestone-details">
-        Intel committed to using 100% renewable energy in all U.S. operations.
-      </div>
-    </div>
-    <div class="milestone-card">
-      <div class="milestone-title">Water Restoration Project</div>
-      <div class="milestone-date">2018</div>
-      <div class="milestone-details">
-        Intel began restoring more water than it consumed in its manufacturing processes.
-      </div>
-    </div>
-    <div class="milestone-card">
-      <div class="milestone-title">Zero Waste to Landfill</div>
-      <div class="milestone-date">2022</div>
-      <div class="milestone-details">
-        Achieved zero waste to landfill at major manufacturing sites worldwide.
-      </div>
-    </div>
-    <!-- Add more milestone cards as needed -->
-  </section>
 </body>
 </html>

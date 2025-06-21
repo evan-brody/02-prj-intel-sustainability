@@ -1,7 +1,8 @@
 /* --- GLOBAL STYLES --- */
 
-/* Set a nicer font for the whole website and center all text */
+/* Set a light blue gradient background for the whole website */
 body {
+  background: linear-gradient(135deg, #eaf3fb 0%, #b3d1f7 100%);
   font-family: 'Roboto', Arial, sans-serif; /* Use Roboto or Arial as fallback */
   text-align: center; /* Center all text on the page */
   margin: 0;
